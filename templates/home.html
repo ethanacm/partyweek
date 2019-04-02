@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fundraising</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+</head>
+<body>
+<h1 class="textt">Party Week Fundraising </h1>
+<div id=countdown-wrap>
+    <div id="goal">$1,200</div>
+    <div id="glass">
+        <div style="width: {{ data['pcnt_funded'] }}%;" id="progress">
+        </div>
+    </div>
+    <div class="goal-stat">
+        <span class="goal-number">{{ data['pcnt_funded'] }}%</span>
+        <span class="goal-label">Funded</span>
+    </div>
+    <div class="goal-stat">
+        <span class="goal-number">${{ data['amount_raised'] }}</span>
+        <span class="goal-label">Raised</span>
+    </div>
+    {#    <div class="goal-stat">#}
+    {#        <span class="goal-number"><div id="countdown"></div></span>#}
+    {#        <span class="goal-label">Days to Go</span>#}
+    {#    </div>#}
+    <div class="goal-stat">
+        <span class="goal-number">{{ data['num_sponsors'] }}</span>
+        <span class="goal-label">Sponsors</span>
+    </div>
+</div>
+<div id=classyear-wrap>
+    <h2 class="textt">Amount Raised by Class Year </h2>
+    <div id="singleyear">
+        <div class="year-goal-stat">
+            <span class="goal-number">First Years: {{ data['pcnt_first_year'] }}% of total</span>
+        </div>
+        <div id="year-glass">
+            <div style="width: {{ data['pcnt_first_year'] }}%;" id="progress">
+            </div>
+        </div>
+    </div>
+    <div id="singleyear">
+        <div class="year-goal-stat">
+            <span class="goal-number">Sophomores: {{ data['pcnt_sophomore'] }}% of total</span>
+        </div>
+        <div id="year-glass">
+            <div style="width: {{ data['pcnt_sophomore'] }}%;" id="progress">
+            </div>
+        </div>
+    </div>
+    <div id="singleyear">
+        <div class="year-goal-stat">
+            <span class="goal-number">Juniors: {{ data['pcnt_junior'] }}% of total</span>
+        </div>
+        <div id="year-glass">
+            <div style="width: {{ data['pcnt_junior'] }}%;" id="progress">
+            </div>
+        </div>
+    </div>
+    <div id="singleyear">
+        <div class="year-goal-stat">
+            <span class="goal-number">Seniors: {{ data['pcnt_senior'] }}% of total</span>
+        </div>
+        <div id="year-glass">
+            <div style="width: {{ data['pcnt_senior'] }}%;" id="progress">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="goal-stat">
+    </div>
+    <div class="goal-stat">
+        <span class="goal-number"><div id="countdown"></div></span>
+    </div>
+
+</div>
+<h3 class="textt">Winning Donation for the Party Week Chalice: ${{ data['chalice_amount'] }} </h3>
+<h3 class="textt">Winning Donation for a Party Week Crown: ${{ data['crown_amount'] }} (and up)</h3>
+<div id=countdown-wrap>
+</div>
+
+
+<!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
+
+</body>
+</html>

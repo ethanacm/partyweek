@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log Contributions</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+</head>
+<body>
+<form action="/log" method="get">
+    <fieldset>
+        <legend>Single contribution: all these fields are optional, but will help us keep track. always include an amount tho</legend>
+        venmo username / name / whatever:<br>
+        <input type="text" name="username" value=""><br>
+        amount (no dollar sign, just whole number):<br>
+        <input type="text" name="caption" value=""><br>
+        venmo caption:<br>
+        <input type="text" name="amount" value=""><br><br>
+        <label>classyear</label>
+        <p>
+           <select name="classyear">
+            <option value="freshman">freshman</option>
+            <option value="sophomore">sophomore</option>
+            <option value="junior">junior</option>
+            <option value="senior">senior</option>
+            <option value="unknown">unknown</option>
+        </select>
+        </p>
+
+        <input type="submit" value="Submit">
+
+    </fieldset>
+</form>
+
+<table class="pure-table" id="donations">
+                    <thead>
+                        <tr>
+                            <th scope="col">timestamp</th>
+                            <th scope="col">amount</th>
+                            <th scope="col">year</th>
+                            <th scope="col">username</th>
+                            <th scope="col">caption</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for donation in history %}
+                        <tr id={{ donation.timestamp }}>
+                            <th scope="row">{{ donation.timestamp }}</th>
+                            <td> {{donation.amount }} </td>
+                            <td> {{ donation.year }} </td>
+                            <td> {{ donation.username }} </td>
+                            <td> {{ donation.caption }} </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+</body>
+</html>
