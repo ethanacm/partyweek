@@ -9,7 +9,7 @@ import datetime
 
 application = Flask(__name__, static_folder='static', template_folder='templates')
 
-SQLLITE = 'database.db'
+SQLLITE = '/home/ethanacm/partyweek/database.db'
 GOAL = 1500
 
 DATA = {'pcnt_funded': 20,
