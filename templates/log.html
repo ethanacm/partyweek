@@ -9,15 +9,16 @@
 <form action="/log" method="get">
     <fieldset>
         <legend>Single contribution: all these fields are optional, but will help us keep track. always include an amount tho</legend>
+        <br>
         venmo username / name / whatever:<br>
-        <input type="text" name="username" value=""><br>
-        amount (no dollar sign, just whole number):<br>
+        <input type="text" name="username" value="">
+        <br> venmo caption: <br>
         <input type="text" name="caption" value=""><br>
-        venmo caption:<br>
-        <input type="text" name="amount" value=""><br><br>
+        amount (just the number):<br>
+        <input type="number" name="amount" value=""><br><br>
         <label>classyear</label>
         <p>
-           <select name="classyear">
+           <select name="year">
             <option value="freshman">freshman</option>
             <option value="sophomore">sophomore</option>
             <option value="junior">junior</option>
@@ -44,7 +45,7 @@
                     <tbody>
                     {% for donation in history %}
                         <tr id={{ donation.timestamp }}>
-                            <th scope="row">{{ donation.timestamp }}</th>
+                            <th scope="row">{{ donation.timestamptext }}</th>
                             <td> {{donation.amount }} </td>
                             <td> {{ donation.year }} </td>
                             <td> {{ donation.username }} </td>
