@@ -1,3 +1,4 @@
+import sqlite3
 SQLLITE = 'database.db'
 conn = sqlite3.connect(SQLLITE)
 c = conn.cursor()
