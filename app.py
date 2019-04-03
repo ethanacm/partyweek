@@ -120,7 +120,7 @@ def get_log_page():
 
         central = timezone('US/Central')
         time_string = datetime.datetime.now(central)
-        l = time_string.strftime('%l:%M%p %Z on %b %d')
+        l = time_string.strftime('%l:%M%p on %b %d')
         if args["amount"]:
             c.execute("INSERT INTO database VALUES (?,?,?,?,?,?)",
                       [int(time.time() * 1000), int(args["amount"]), args["year"], args["username"], args['caption'],
