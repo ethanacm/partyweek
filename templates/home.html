@@ -5,13 +5,13 @@
     <title>Fundraising</title>
     <link rel="stylesheet" href="../static/css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/js/cursor.js"></script>
 
 </head>
 <body>
 <h1 class="textt">🎉 Party Week Fundraising 🎉 </h1>
 <h5 class="textt">Last updated: {{ data['last_updated'] }}</h5>
 <div id=countdown-wrap>
+
     <div id="goal">$1,500</div>
     <div id="glass">
         <div style="width: {{ data['pcnt_funded'] }}%;" id="progress">
@@ -89,7 +89,9 @@
 
 
 <!--http://stackoverflow.com/questions/9335140/how-to-countdown-to-a-date -->
-    <script type="text/javascript" src="../static/js/animations.js"></script>
+{#    <script type="text/javascript" src="../static/js/cursor.js"></script>#}
+
+<script type="text/javascript" src="../static/js/animations.js"></script>
 
 
 </body>
