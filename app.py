@@ -45,7 +45,7 @@ HISTORY = [{'timestamp': '',
 def calculate_data(history, top_6):
     data = {}
     data['last_updated'] = history[0]['timestamptext']
-    data['num_sponsors'] = len(history)
+    data['num_sponsors'] = len(history) - 8
     data['chalice_amount'] = 0
     data['crown_amount'] = 0
     if len(top_6) > 0:
